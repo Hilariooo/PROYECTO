@@ -17,8 +17,8 @@ import {
 const lista = document.
   querySelector("#lista");
 const firestore = getFirestore();
-const daoTenis = firestore.
-  collection("Tenis");
+const daoSuperheroes = firestore.
+  collection("Superheroes");
 
 getAuth().onAuthStateChanged(
   protege, muestraError);
@@ -35,7 +35,7 @@ getAuth().onAuthStateChanged(
 
 function consulta() {
   daoTenis.
-    orderBy("marca")
+    orderBy("nombre")
     .onSnapshot(
       htmlLista, errConsulta);
 }
@@ -61,7 +61,7 @@ async function htmlLista(snap) {
   } else {
     html += /* html */
       `<li class="vacio">
-        -- No hay tenis
+        -- No hay superhéroes
         registrados. --
       </li>`;
   }
@@ -77,11 +77,10 @@ async function htmlFila(doc) {
    * @type {import("./tipos.js").
                       Tenis} */
   const data = doc.data();
-  const marca = cod(data.marca);
-  const modelo = cod(data.modelo);
-  const lkcompra = cod(data.lkcompra);
+  const nombre = cod(data.nombre);
+  const superpoder = cod(data.superpoder);
   const img = cod(
-    await urlStorage(modelo));
+    await urlStorage(nombre));
   const parámetros =
   new URLSearchParams();
   parámetros.append("id", doc.id);
@@ -92,17 +91,16 @@ async function htmlFila(doc) {
     "superheroe.html?${parámetros}">
         <span class="marco">
           <img src="${img}"
-            alt="Falta el Avatar">
+            alt="Falta la imagen del superhéroe">
         </span>
         <span class="texto">
           <strong
               class="primario">
-            ${marca}
-            ${modelo}
+            ${nombre}
           </strong>
           <span
           class="secundario">
-        ${lkcompra}<br>
+        ${superpoder}
       </span>
         </span>
       </a>
