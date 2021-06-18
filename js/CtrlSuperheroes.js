@@ -34,7 +34,7 @@ getAuth().onAuthStateChanged(
     }
 
 function consulta() {
-  daoTenis.
+  daoSuperheroes.
     orderBy("nombre")
     .onSnapshot(
       htmlLista, errConsulta);
