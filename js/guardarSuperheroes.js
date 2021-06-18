@@ -8,13 +8,13 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  muestraTenis
+  muestraSuperheroes
 } from "./navegacion.js";
 
 
 const firestore = getFirestore();
-const daoTenis = firestore.
-  collection("Tenis");
+const daoSuperheroes = firestore.
+  collection("Superheroes");
 
 /**
  * @param {Event} evt
@@ -25,24 +25,22 @@ guardaTenis(evt, formData,
     id) {
   try {
     evt.preventDefault();
-  const marca = 
-    formData.get("marca");
+  const nombre = 
+    formData.get("nombre");
   const modelo = 
-    formData.get("modelo");
-  const lkcompra = 
-    formData.get("lkcompra");
+    formData.get("superpoder");
   
-    const modeloo = {
-    marca,modelo,lkcompra
+    const modelo = {
+    nombre,superpoder
     };
     await daoTenis.
     doc(id).
-    set(modeloo);
+    set(modelo);
     
   const avatar =
     formData.get("avatar");
     await subeStorage(id, avatar);
-    muestraTenis();
+    muestraSuperheroes();
   } catch (e) {
     muestraError(e);
   }
