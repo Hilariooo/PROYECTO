@@ -97,7 +97,7 @@ async function elimina() {
       await daoSuperheroes.
         doc(id).
         delete();
-      await eliminaStorage(modelo);
+      await eliminaStorage(nombre);
       muestraSuperheroes();
     }
   } catch (e) {
