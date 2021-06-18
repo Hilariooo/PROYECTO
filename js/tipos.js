@@ -6,6 +6,8 @@
 /**
  * @typedef {Object} Superheroes
  * @property {string} nombre
+ * @property {string} superpoder
+
  */
 
 /**
