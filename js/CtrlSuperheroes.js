@@ -75,7 +75,7 @@ async function htmlLista(snap) {
 async function htmlFila(doc) {
   /**
    * @type {import("./tipos.js").
-                      Tenis} */
+                      Superheroes} */
   const data = doc.data();
   const nombre = cod(data.nombre);
   const superpoder = cod(data.superpoder);
