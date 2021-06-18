@@ -45,12 +45,10 @@ class MiNav extends HTMLElement {
           </li>
           <li>
           <a href=
-      "tenis.html">Tenis</a>
+      "superheroes.html">Superhéroes</a>
         </li>`;
       }
-      /* Enlaces para solo
-       * para administradores.
-       */
+     
       if (roles.has(
         "Administrador")) {
         html += /* html */
