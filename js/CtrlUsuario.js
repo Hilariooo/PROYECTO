@@ -18,7 +18,7 @@ import {
 import {
   checksRoles,
   guardaUsuario,
-  selectTenis
+  selectSuper
 } from "./usuarios.js";
 
 const params =
@@ -57,9 +57,9 @@ async function busca() {
       forma.cue.value = id || "";
       img.src =
         await urlStorage(id);
-      selectTenis(
-        forma.tenisId,
-        data.tenisId)
+      selectSuper(
+        forma.superId,
+        data.superId)
       checksRoles(
         listaRoles, data.rolIds);
       forma.addEventListener(
