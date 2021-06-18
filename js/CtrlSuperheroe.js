@@ -18,15 +18,15 @@ import {
   tieneRol
 } from "./seguridad.js";
 import {
-  guardaTenis
+  guardaSuperheroes
 } from "./guardarSuperheroes.js";
 
 const params =
   new URL(location.href).
     searchParams;
 const id = params.get("id");
-const daoTenis = getFirestore().
-  collection("Tenis");
+const daoSuperheroes = getFirestore().
+  collection("Superheroes");
 /** @type {HTMLFormElement} */
 const forma = document["forma"];
 const img = document.
@@ -47,20 +47,18 @@ async function protege(usuario) {
 
 async function busca() {
   try {
-    const doc = await daoTenis.
+    const doc = await daoSuperheroes.
       doc(id).
       get();
     if (doc.exists) {
       const data = doc.data();
-      const modelo = cod(data.modelo);
-      forma.marca.value =
-        data.marca || "";
-      forma.modelo.value =
-        data.modelo || "";
-      forma.lkcompra.value =
-        data.lkcompra || "";
+      const nombre = cod(data.nombre);
+      forma.nombre.value =
+        data.nombre || "";
+      forma.superpoder.value =
+        data.superpoder || "";
       img.src =
-        await urlStorage(modelo);
+        await urlStorage(nombre);
         forma.addEventListener(
         "submit", guarda);
       forma.eliminar.
@@ -81,9 +79,9 @@ async function busca() {
   const formData =
     new FormData(forma);
   const id = getString(
-    formData, "modelo").trim();
+    formData, "nombre").trim();
 
-  await guardaTenis(evt,
+  await guardaSuperheroes(evt,
    formData, id);
 }
 
@@ -92,11 +90,11 @@ async function elimina() {
   try {
     const formData =
     new FormData(forma);
-  const modelo = getString(
-    formData, "modelo").trim();
+  const nombre = getString(
+    formData, "nombre").trim();
     if (confirm("Confirmar la " +
       "eliminación")) {
-      await daoTenis.
+      await daoSuperheroes.
         doc(id).
         delete();
       await eliminaStorage(modelo);
