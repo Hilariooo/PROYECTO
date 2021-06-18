@@ -21,7 +21,7 @@ const daoSuperheroes = firestore.
  * @param {FormData} formData
  * @param {string} id  */
 export async function
-guardaTenis(evt, formData,
+guardaSuperheroes(evt, formData,
     id) {
   try {
     evt.preventDefault();
