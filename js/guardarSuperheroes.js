@@ -27,7 +27,7 @@ guardaSuperheroes(evt, formData,
     evt.preventDefault();
   const nombre = 
     formData.get("nombre");
-  const modelo = 
+  const superpoder = 
     formData.get("superpoder");
   
     const modelo = {
