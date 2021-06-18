@@ -13,7 +13,7 @@
 /**
  * @typedef {Object} Usuario
  * @property {string[]} rolIds
- * @property {string} tenisId
+ * @property {string} superId
  */
 
 // @ts-nocheck
