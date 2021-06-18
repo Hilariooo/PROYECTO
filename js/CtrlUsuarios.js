@@ -19,8 +19,8 @@ const lista = document.
 const firestore = getFirestore();
 const daoRol = firestore.
   collection("Rol");
-const daoTenis = firestore.
-  collection("Tenis");
+const daoSuperheroes = firestore.
+  collection("Superheroes");
 const daoUsuario = firestore.
   collection("Usuario");
 
@@ -81,9 +81,9 @@ async function htmlFila(doc) {
   const data = doc.data();
   const img = cod(
     await urlStorage(doc.id));
-  const tenis =
-    await buscaTenis(
-      data.tenisId);
+  const superheroes =
+    await buscaSuper(
+      data.superId);
   const roles =
     await buscaRoles(data.rolIds);
   const parámetros =
@@ -105,7 +105,7 @@ async function htmlFila(doc) {
           </strong>
           <span
           class="secundario">
-        ${tenis}<br>
+        ${superheroes}<br>
         ${roles}
       </span>
         </span>
@@ -117,23 +117,23 @@ async function htmlFila(doc) {
  * tenis en base a su id.
  * @param {string} id */
 async function
-  buscaTenis(id) {
+  buscaSuperheroes(id) {
   if (id) {
     const doc =
-      await daoTenis.
+      await daoSuperheroes.
         doc(id).
         get();
     if (doc.exists) {
       /**
        * @type {import(
           "./tipos.js").
-            Tenis} */
+            Superheroes} */
       const data = doc.data();
       return (/* html */
-        `${cod(data.modelo)}`);
+        `${cod(data.nombre)}`);
     }
   }
-  return "-- Sin tenis favorito --";
+  return "-- Sin superhéroe favorito --";
 }
 
 /** Recupera el html de los
