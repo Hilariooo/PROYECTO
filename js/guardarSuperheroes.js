@@ -33,7 +33,7 @@ guardaSuperheroes(evt, formData,
     const modelo = {
     nombre,superpoder
     };
-    await daoTenis.
+    await daoSuperheroes.
     doc(id).
     set(modelo);
     
