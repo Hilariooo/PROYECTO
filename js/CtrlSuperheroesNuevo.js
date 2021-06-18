@@ -9,8 +9,8 @@ import {
   tieneRol
 } from "./seguridad.js";
 import {
-  guardarSuperheroes
-} from "./guardarSuperheroes.js";
+  guardaSuperheroes
+} from "./guardaSuperheroes.js";
 
 
 /** @type {HTMLFormElement} */
@@ -37,6 +37,6 @@ async function guarda(evt) {
   const id = getString(
     formData, "nombre").trim();
 
-  await guardarSuperheroes(evt,
+  await guardaSuperheroes(evt,
    formData, id);
 }
