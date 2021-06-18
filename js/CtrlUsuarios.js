@@ -117,7 +117,7 @@ async function htmlFila(doc) {
  * tenis en base a su id.
  * @param {string} id */
 async function
-  buscaSuperheroes(id) {
+  buscaSuper(id) {
   if (id) {
     const doc =
       await daoSuperheroes.
