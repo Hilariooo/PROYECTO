@@ -19,7 +19,7 @@ import {
 } from "./seguridad.js";
 import {
   guardaTenis
-} from "./teniss.js";
+} from "./guardarSuperheroes.js";
 
 const params =
   new URL(location.href).
