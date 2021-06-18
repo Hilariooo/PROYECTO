@@ -4,10 +4,8 @@
  */
 
 /**
- * @typedef {Object} Tenis
- * @property {string} marca
- * @property {string} modelo
- * @property {string} lkcompra
+ * @typedef {Object} Superheroes
+ * @property {string} nombre
  */
 
 /**
