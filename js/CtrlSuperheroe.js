@@ -12,7 +12,7 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  muestraTenis
+  muestraSuperheroes
 } from "./navegacion.js";
 import {
   tieneRol
@@ -98,7 +98,7 @@ async function elimina() {
         doc(id).
         delete();
       await eliminaStorage(modelo);
-      muestraTenis();
+      muestraSuperheroes();
     }
   } catch (e) {
     muestraError(e);
