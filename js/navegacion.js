@@ -1,7 +1,7 @@
 export function
-  muestraTenis() {
+  muestraSuperheroes() {
   location.href =
-    "tenis.html";
+    "superheroes.html";
 }
 
 export function
