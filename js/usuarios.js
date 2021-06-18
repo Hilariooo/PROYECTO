@@ -13,7 +13,7 @@ import {
 
 const SIN_SUPER = /* html */
   `<option value="">
-    -- Sin Tenis favorito --
+    -- Sin superhéroe favorito --
   </option>`;
 
 const firestore = getFirestore();
